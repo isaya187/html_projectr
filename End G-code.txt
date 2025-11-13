@@ -1,0 +1,29 @@
+; === DMAKERS 3D Printer End G-code ===
+
+
+G91                       ; Relative positioning
+
+G1 Z10 F500               ; Lift Z by 10mm to avoid scratches
+
+G90                       ; Back to absolute positioning
+
+G1 X0 Y200 F3600          ; Park the nozzle (adjust if 200 is out of bounds)
+
+
+M221 S100                 ; Reset flow rate
+
+M900 K0                   ; Reset Linear Advance (only if enabled)
+
+
+;M907 E500               ; Optional: Reset extruder motor current (if supported)
+
+M104 S0                   ; Turn off hotend
+
+M140 S0                   ; Turn off heatbed
+
+M107                     ; Turn off cooling fan
+
+M84                      ; Disable all stepper motors
+
+
+;=== End of End G-code ===
